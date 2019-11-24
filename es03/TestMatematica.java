@@ -1,8 +1,5 @@
 package es03;
 
-import es03.Calcolatrice;
-import javafx.scene.chart.NumberAxis;
-
 public class TestMatematica {
 
     public static void main(String args[]) {
