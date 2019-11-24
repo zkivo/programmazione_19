@@ -48,9 +48,8 @@ public class Calcolatrice {
 
     int[][] sommaMatrici(int[][] a, int[][]b) {
         /* --
-         * Una matrice potrebbe contenere più elementi
-         * in una riga rispetto ad all'altra, in
-         * questo caso ritornerà null.
+         * Le matrici potrebbero avere dimensioni
+         * diverse, in questo caso ritornerà null.
          * --
          */
         int somma[][] = null;
@@ -58,7 +57,7 @@ public class Calcolatrice {
             for (int i = 0; i < a.length; i++){
                 if (a[i].length != b[i].length ||
                     a[i].length != a[0].length)
-                    return null; //matrici con dimensioni diverse
+                    return null;
             }
         } else return null;
         if (a.length != 0) {

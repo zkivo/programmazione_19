@@ -35,11 +35,16 @@ public class TestMatematica {
         int sommaMatrici_1_3[][] =
             miaCalcolatrice.sommaMatrici(matrice1, matrice3);
 
-        System.out.println("-- Matrice 1 --\n" + Calcolatrice.matriceToString(matrice1) +
-                           "-- Matrice 2 --\n" + Calcolatrice.matriceToString(matrice2) + 
-                           "-- Matrice 3 --\n" + Calcolatrice.matriceToString(matrice3) + 
-                           "-- Somma matrici 1 e 2 --\n" + Calcolatrice.matriceToString(sommaMatrici_1_2) + 
-                           "-- Somma matrici 1 e 3 --\n" + Calcolatrice.matriceToString(sommaMatrici_1_3));
+        System.out.println("-- Matrice 1 --\n" + 
+                           Calcolatrice.matriceToString(matrice1) +
+                           "-- Matrice 2 --\n" + 
+                           Calcolatrice.matriceToString(matrice2) + 
+                           "-- Matrice 3 --\n" + 
+                           Calcolatrice.matriceToString(matrice3) + 
+                           "-- Somma matrici 1 e 2 --\n" + 
+                           Calcolatrice.matriceToString(sommaMatrici_1_2) + 
+                           "-- Somma matrici 1 e 3 --\n" + 
+                           Calcolatrice.matriceToString(sommaMatrici_1_3));
     }
 
 }
