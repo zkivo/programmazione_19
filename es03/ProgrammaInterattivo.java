@@ -7,7 +7,7 @@ public class ProgrammaInterattivo {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         String str;
-        String parole_vietate[] = {"alfa", "beta", "gamma", "delta", "epsilon",                            "kappa", "lambda", "sigma", "omega"};
+        String parole_vietate[] = {"alfa", "beta", "gamma", "delta", "epsilon","kappa", "lambda", "sigma", "omega"};
         int i;
         System.out.print("Digita qualcosa, oppure \"fine\" per terminare\n>>");
         while (!(str = scanner.next()).equals("fine")) {
