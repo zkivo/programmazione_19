@@ -29,8 +29,8 @@ public class Persona {
     }
 
     public boolean equals(Persona persona) {
-        if (this.nome == persona.nome &&
-            this.cognome == persona.cognome &&
+        if (this.nome.equals(persona.nome) &&
+            this.cognome.equals(persona.cognome) &&
             this.eta == persona.eta) return true;
         else return false;
     }
