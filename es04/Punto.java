@@ -45,7 +45,7 @@ public class Punto {
         System.out.println("Distanza: " + p1.distanza(p2));
         System.out.println("Punto medio: " + p1.puntoMedio(p2));
         System.out.println(p1.equals(p2) ? "I due punti sono uguali." :
-                                           "I due punto sono diversi.");
+                                           "I due punti sono diversi.");
     }
 
  }
