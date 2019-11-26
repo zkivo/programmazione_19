@@ -5,6 +5,14 @@ public class Persona {
     private String cognome;
     private int eta;
 
+    public Persona() {
+        setNome("sconosciuto").setCognome("sconosciuto").setEta(-1);
+    }
+
+    public Persona(String nome, String cognome, int eta) {
+        setNome(nome).setCognome(cognome).setEta(eta);
+    }
+
     public Persona setNome(String nome) {
         this.nome = nome;
         return this;
@@ -18,6 +26,13 @@ public class Persona {
     public Persona setEta(int eta) {
         this.eta = eta;
         return this;
+    }
+
+    public boolean equals(Persona persona) {
+        if (this.nome == persona.nome &&
+            this.cognome == persona.cognome &&
+            this.eta == persona.eta) return true;
+        else return false;
     }
 
     public String toString(){
