@@ -23,5 +23,4 @@ public class Persona {
     public String toString(){
         return nome + " " + cognome + " " + eta; 
     }
-
 }
