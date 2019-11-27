@@ -28,6 +28,10 @@ public class Persona {
         return this;
     }
 
+    public String getNome() {
+        return this.nome;
+    }
+
     public boolean equals(Persona persona) {
         if (this.nome.equals(persona.nome) &&
             this.cognome.equals(persona.cognome) &&
