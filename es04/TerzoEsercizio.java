@@ -11,10 +11,10 @@ public class TerzoEsercizio {
         Scanner scanner = new Scanner(System.in);
         while (true) { 
             System.out.print("-- Menu --\n(I)nserire persona\n" + 
-                            "(C)ercare persona\n" + 
-                            "(S)tampare lista\n" + 
-                            "(E)liminare lista\n" + 
-                            "(F)ine\n>>");
+                             "(C)ercare persona\n" + 
+                             "(S)tampare lista\n" + 
+                             "(E)liminare lista\n" + 
+                             "(F)ine\n>>");
             switch (scanner.next().toUpperCase()) {
                 case "I":
                     System.out.print("Inserire nome, cognome ed eta'\n>>");
@@ -43,8 +43,8 @@ public class TerzoEsercizio {
                     return;
 
                 default:
-                System.out.println("--Errore--\n" + 
-                                "Inserire una delle lettere indicate nel menu'.\n");
+                    System.out.println("--Errore--\n" + 
+                                       "Inserire una delle lettere indicate nel menu'.\n");
             }
         }
     }
