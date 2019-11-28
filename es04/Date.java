@@ -15,6 +15,12 @@ public class Date {
                                                     31, 31, 30,
                                                     31, 30, 31};
 
+    public Date(Date date) {
+        this.giorno = date.giorno;
+        this.mese = date.mese;
+        this.anno = date.anno;
+    }
+
     public Date(int g, int a) {
         int i;
         anno = a;
