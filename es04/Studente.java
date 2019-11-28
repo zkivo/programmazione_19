@@ -2,10 +2,10 @@ package es04;
 
 public class Studente {
 
-    String nome;
-    String cognome;
-    Date data_di_nascita;
-    long matricola;
+    private String nome;
+    private String cognome;
+    private Date data_di_nascita;
+    private long matricola;
 
     public Studente(String nome, String cognome, Date data_di_nascita, 
             long matricola) {
