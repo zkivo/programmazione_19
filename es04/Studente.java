@@ -20,6 +20,14 @@ public class Studente {
                    matricola; 
     }
 
+    public String getCognome() {
+        return cognome;
+    }
+
+    public long getMatricola() {
+        return matricola;
+    }
+
     public boolean equals(Studente studente) {
         if (this.nome.equals(studente.nome) &&
                 this.cognome.equals(studente.cognome) &&
