@@ -80,17 +80,13 @@ public class Archivio {
                 case 1:
                     String nome, cognome;
                     Date date;
-                    long matricola;
                     System.out.print("Inserire nome e cognome\n>>");
                     nome    = scanner.next();
                     cognome = scanner.next();
                     System.out.print("Inserire data di nasciata (gg/mm/aaaa)\n>>");
                     date = new Date(scanner.nextInt(), scanner.nextInt(),
                                     scanner.nextInt());
-                    System.out.print("Inserire la matricola\n>>");
-                    matricola = scanner.nextLong();
-                    archivio.insertToArchive(new Studente(nome, cognome, date, 
-                                                          matricola));
+                    archivio.insertToArchive(new Studente(nome, cognome, date));
                 break;
 
                 case 2:

@@ -2,17 +2,17 @@ package es04;
 
 public class Studente {
 
+    private static long MATRICOLA_COUNTER = 0;
     private String nome;
     private String cognome;
     private Date data_di_nascita;
     private long matricola;
 
-    public Studente(String nome, String cognome, Date data_di_nascita, 
-            long matricola) {
+    public Studente(String nome, String cognome, Date data_di_nascita) {
         this.nome = nome;
         this.cognome = cognome;
         this.data_di_nascita = new Date(data_di_nascita);
-        this.matricola = matricola;
+        this.matricola = MATRICOLA_COUNTER++;
     }
 
     public String toString() {
@@ -39,11 +39,9 @@ public class Studente {
 
     public static void main(String args[]) {
 
-        Studente s1 = new Studente("Luca", "Bianchi", new Date(6, 8, 1997),
-                                   3564111);
+        Studente s1 = new Studente("Luca", "Bianchi", new Date(6, 8, 1997));
         Studente s2 = new Studente("Mario", "Rossi", 
-                                   new Date(1, "febbraio", 2000),
-                                   9919222);
+                                   new Date(1, "febbraio", 2000));
 
         System.out.println(s1 + "\n" + s2);
         System.out.println(s1.equals(s2));
