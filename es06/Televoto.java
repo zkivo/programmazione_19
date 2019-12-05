@@ -21,14 +21,12 @@ public class Televoto {
         Scanner scanner = new Scanner(System.in);
         Televoto televoto = new Televoto();
         do {
-
             System.out.print("-- Menu' --\n" + 
                              "1) Inserisci voto\n" + 
                              "2) Stampa voti ricevuti\n" +
                              "3) Stampa voti per cantante\n" +
                              "4) Exit\n>>");
             switch (scanner.nextInt()) {
-
                 case 1:
                     System.out.print("Inserisci numero di telefono\n>>");     
                     boolean flag = false;
