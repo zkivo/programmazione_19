@@ -9,5 +9,4 @@ public class Line {
         this.A = new Point2D(A);
         this.B = new Point2D(B);        
     }
-
 }
