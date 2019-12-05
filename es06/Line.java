@@ -1,7 +1,5 @@
 package es06;
 
-import es06.Point2D;
-
 public class Line {
 
     private Point2D A;
