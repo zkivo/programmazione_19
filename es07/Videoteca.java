@@ -37,6 +37,17 @@ public class Videoteca {
         videoteca.aggiungiAbbonato(new AbbonatoPremium(
                                    "Maria", "Verdi", 0.75f,
                                    true));
+        videoteca.aggiungiAbbonato(new AbbonatoPremium(
+                                   "Giovanni", "Rossi", 0.22f,
+                                   false));
+
+        for (int i = 0; i < 3; i++) {
+            int i_abb = (int) (Math.random() * 4);
+            int i_ogg = (int) (Math.random() * 4);
+
+
+        }
+
     }
 
 }
