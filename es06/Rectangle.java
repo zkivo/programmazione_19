@@ -1,6 +1,8 @@
 package es06;
 
-public class Rectangle {
+import es07.Scalable;
+
+public class Rectangle implements Scalable {
 
     private float width;
     private float length;
@@ -21,8 +23,21 @@ public class Rectangle {
         return width;
     }
 
+    public float getLength() {
+        return length;
+    }
+
     public float getPerimetro() {
         return width * 2 + length * 2;
+    }
+
+    public void scale(double factor) {
+        length *= (float) factor;
+        width  *= (float) factor;
+    }
+
+    public void draw() {
+        System.out.println(toString());
     }
 
     public String toString() {
