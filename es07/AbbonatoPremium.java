@@ -3,7 +3,7 @@ package es07;
 public class AbbonatoPremium extends Abbonato {
 
     private boolean acquisto_gratuito;
-    private float spesa_complessiva;
+    //private float spesa_complessiva;
 
     public AbbonatoPremium(String nome, String cognome, float
             sconto, boolean acquisto_gratuito) {
@@ -14,7 +14,7 @@ public class AbbonatoPremium extends Abbonato {
     public float getSconto() {
         if (acquisto_gratuito) {
             acquisto_gratuito = false;
-            return 1;
+            return (float) 1.0f;
         }
         else return super.getSconto();
     }

@@ -12,6 +12,10 @@ public class Persona {
     private String citta;
     private String cap;
 
+    public String getNominativo() {
+        return nome + " " + cognome;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
