@@ -22,7 +22,7 @@ public class Videoteca {
         abbonati.add(abbonato);
     }
 
-    public float getPrezzo(float prezzo, Abbonato abbonato) {
+    public static float getPrezzo(float prezzo, Abbonato abbonato) {
         return prezzo * abbonato.getSconto();
     }
 
@@ -35,20 +35,20 @@ public class Videoteca {
         videoteca.aggiungiAbbonato(new Abbonato("Luca", "Bianchi", 0.5f));    
         videoteca.aggiungiAbbonato(new AbbonatoPremium("Maria", "Verdi", 0.75f, true));
         videoteca.aggiungiAbbonato(new AbbonatoPremium("Giovanni", "Rossi", 0.22f, false));
-
+        
         System.out.println("\n~~ Videoteca ~~");
-
         for (int i = 0; i < 3; i++) {
             int i_abb = (int) (Math.random() * 4);
             int i_ogg = (int) (Math.random() * 4);
             abbonato = videoteca.abbonati.get(i_abb);
             video    = videoteca.oggetti.get(i_ogg);
+            float sconto = abbonato.getSconto();
             System.out.println(abbonato.getNominativo() + " compra \""  + 
                                 video.getTitolo() + "\" - " + 
                                 video.getPrezzo() + "\n" + 
-                                "Sconto: " + abbonato.getSconto() + " -> Prezzo finale: " +
-                                (video.getPrezzo() * abbonato.getSconto()) + "\n");
-
+                                "Sconto: " + sconto + " -> Prezzo finale: " +
+                                (video.getPrezzo() - video.getPrezzo() * sconto) + 
+                                "\n");
         }
         System.out.println("\n~~ ~~ ~~ ~~");
 

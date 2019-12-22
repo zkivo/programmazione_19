@@ -14,7 +14,7 @@ public class AbbonatoPremium extends Abbonato {
     public float getSconto() {
         if (acquisto_gratuito) {
             acquisto_gratuito = false;
-            return (float) 1.0f;
+            return 1f;
         }
         else return super.getSconto();
     }
