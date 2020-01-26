@@ -3,8 +3,7 @@ package es06;
 public class Square extends Rectangle {
 
     public Square(float width) {
-        setWidth(width);
-        setLength(width);
+        super(width, width);
     }
 
     public void scale(double factor) {

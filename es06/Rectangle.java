@@ -7,11 +7,25 @@ public class Rectangle implements Scalable {
     private float width;
     private float length;
 
-    public void setWidth(float width) {
+    public Rectangle(float width, float length) 
+            throws IllegalArgumentException {
+        setWidth(width);
+        setLength(length);
+    }
+
+    public void setWidth(float width) 
+            throws IllegalArgumentException  {
+        if (width < 0) {
+            throw new IllegalArgumentException("width < 0");
+        }
         this.width = width;
     }
 
-    public void setLength(float length) {
+    public void setLength(float length) 
+            throws IllegalArgumentException {
+        if (length < 0) {
+            throw new IllegalArgumentException("length < 0");
+        }
         this.length = length;
     }
 
