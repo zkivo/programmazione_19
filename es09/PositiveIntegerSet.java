@@ -27,21 +27,24 @@ public class PositiveIntegerSet {
         this.set.addAll(set);
     }
 
-    public PositiveIntegerSet union(PositiveIntegerSet pos_set) {
+    public PositiveIntegerSet union(PositiveIntegerSet pos_set)
+            throws MyIlligalArgumentException {
         PositiveIntegerSet ret = new PositiveIntegerSet(this.set.toArray(
                                                         new Integer[0]));
         ret.addAll(pos_set.getSet());
         return ret;
     }
 
-    public PositiveIntegerSet intersection(PositiveIntegerSet pos_set) {
+    public PositiveIntegerSet intersection(PositiveIntegerSet pos_set) 
+            throws MyIlligalArgumentException {
         PositiveIntegerSet ret = new PositiveIntegerSet(this.set.toArray(
                                                         new Integer[0]));      
         ret.set.retainAll(pos_set.getSet());
         return ret;
     }
 
-    public PositiveIntegerSet difference(PositiveIntegerSet pos_set) {
+    public PositiveIntegerSet difference(PositiveIntegerSet pos_set) 
+            throws MyIlligalArgumentException {
         PositiveIntegerSet unione = this.union(pos_set);
         PositiveIntegerSet intersezione = this.intersection(pos_set);
         unione.set.removeAll(intersezione.set);
@@ -80,6 +83,7 @@ public class PositiveIntegerSet {
         for (int elemento : set) {
             ret += elemento + ", ";
         }
+        if (ret.length() > 1) ret = ret.substring(0, ret.length() - 2);
         return ret + "}";
     }
 

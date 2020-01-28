@@ -6,7 +6,8 @@ public class SmallPositiveIntegerSet extends PositiveIntegerSet {
         super(pos_set);
     }
 
-    public SmallPositiveIntegerSet(Integer... args) {
+    public SmallPositiveIntegerSet(Integer... args) 
+            throws MyIlligalArgumentException {
         super(args);
     }
 
