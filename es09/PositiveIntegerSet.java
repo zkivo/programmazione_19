@@ -45,10 +45,10 @@ public class PositiveIntegerSet {
 
     public PositiveIntegerSet difference(PositiveIntegerSet pos_set) 
             throws MyIlligalArgumentException {
-        PositiveIntegerSet unione = this.union(pos_set);
-        PositiveIntegerSet intersezione = this.intersection(pos_set);
-        unione.set.removeAll(intersezione.set);
-        return unione;
+        PositiveIntegerSet ret = new PositiveIntegerSet(this.set.toArray(
+                                                        new Integer[0]));      
+        ret.set.removeAll(pos_set.getSet());
+        return ret;
     }
 
     public void insertElement(int element) throws MyIlligalArgumentException {
@@ -84,6 +84,7 @@ public class PositiveIntegerSet {
             ret += elemento + ", ";
         }
         if (ret.length() > 1) ret = ret.substring(0, ret.length() - 2);
+        else return "- Insieme vuoto -";
         return ret + "}";
     }
 

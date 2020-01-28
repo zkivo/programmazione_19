@@ -40,7 +40,13 @@ public class Main {
         }
 
         System.out.println("Insieme_1 : " + set_1 + "\n" +
-                           "Insieme_2 : " + set_2);
+                           "Insieme_2 : " + set_2 + "\n" +
+                           (set_1.equals(set_2) ? 
+                               "I due insiemi sono uguali\n" : 
+                               "I due insiemi non sono uguali\n") +
+                           "Unione : " + set_1.union(set_2) + "\n" +
+                           "Intersezione : " + set_1.intersection(set_2) +
+                           "\nDifferenza : " + set_1.difference(set_2)); 
 
     }
 
