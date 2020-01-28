@@ -13,11 +13,11 @@ public class PositiveIntegerSet {
     }
     
     public PositiveIntegerSet(Integer... args) 
-            throws MyIlligalArgumentException {
+            throws MyIllegalArgumentException {
         set = new HashSet<>();
         for (int i = 0; i < args.length; i++) {
             if (args[i] <= 0) throw 
-                    new MyIlligalArgumentException("La classe accetta solo " + 
+                    new MyIllegalArgumentException("La classe accetta solo " + 
                                                    "numeri positivi.");
             set.add(args[i]);
         }
@@ -28,7 +28,7 @@ public class PositiveIntegerSet {
     }
 
     public PositiveIntegerSet union(PositiveIntegerSet pos_set)
-            throws MyIlligalArgumentException {
+            throws MyIllegalArgumentException {
         PositiveIntegerSet ret = new PositiveIntegerSet(this.set.toArray(
                                                         new Integer[0]));
         ret.addAll(pos_set.getSet());
@@ -36,7 +36,7 @@ public class PositiveIntegerSet {
     }
 
     public PositiveIntegerSet intersection(PositiveIntegerSet pos_set) 
-            throws MyIlligalArgumentException {
+            throws MyIllegalArgumentException {
         PositiveIntegerSet ret = new PositiveIntegerSet(this.set.toArray(
                                                         new Integer[0]));      
         ret.set.retainAll(pos_set.getSet());
@@ -44,16 +44,16 @@ public class PositiveIntegerSet {
     }
 
     public PositiveIntegerSet difference(PositiveIntegerSet pos_set) 
-            throws MyIlligalArgumentException {
+            throws MyIllegalArgumentException {
         PositiveIntegerSet ret = new PositiveIntegerSet(this.set.toArray(
                                                         new Integer[0]));      
         ret.set.removeAll(pos_set.getSet());
         return ret;
     }
 
-    public void insertElement(int element) throws MyIlligalArgumentException {
+    public void insertElement(int element) throws MyIllegalArgumentException {
         if (element <= 0) throw 
-                new MyIlligalArgumentException("La classe accetta solo " + 
+                new MyIllegalArgumentException("La classe accetta solo " + 
                                                "numeri positivi.");
         set.add(element);
     }
