@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ToDoList {
 
     public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner     = new Scanner(System.in);
         Queue<Compito> coda = new PriorityQueue<>();
         int    input;
         String desc;
@@ -38,7 +38,7 @@ public class ToDoList {
                     flag = false;
                 break;
             }
-            
+
             System.out.println(coda);
 
         } while (flag);

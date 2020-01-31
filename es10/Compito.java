@@ -15,8 +15,8 @@ public class Compito implements Comparable<Compito> {
     }
 
     public int compareTo(Compito o) {
-        if (priorita > o.priorita) return 1;
-        else if (priorita < o.priorita) return -1;
+        if (priorita < o.priorita) return 1;
+        else if (priorita > o.priorita) return -1;
         else return 0;
     }
 
