@@ -12,14 +12,13 @@ public class ToDoList {
         int    input;
         String desc;
         boolean flag = true;
-        
         do {
+
             System.out.print("-- Menu' --\n" +
                              "1) Aggiungi compito\n" +
                              "2) Next\n" + 
                              "3) Exit\n>>");
             input = scanner.nextInt();
-            
 
             switch (input) {
                 case 1:
@@ -40,7 +39,6 @@ public class ToDoList {
             }
 
             System.out.println(coda);
-
         } while (flag);
     }
 }
