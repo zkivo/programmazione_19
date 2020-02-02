@@ -14,10 +14,12 @@ public class Candidato extends Studente {
         return super.toString() + ", Lista: " + lista;
     }
 
-    public String getLisa();
+    public String getLista() {
+        return lista;
+    }
 
     public void setLista(String lista) {
-        lista = new String(lista);
+        this.lista = new String(lista);
     }
 
 }

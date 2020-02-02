@@ -2,13 +2,18 @@ package es11.Seggio;
 
 import java.util.Set;
 import java.util.Map;
+import java.util.List;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.TreeMap;
+import java.util.Scanner;
+import java.util.Collections;
 
 public class Seggio {
 
     private Set<Studente>           set_studenti;
     private Set<Candidato>          set_candidati;
+    private List<Candidato>         list_candidati;
     private Map<Studente, Boolean>  has_voted;
     private Map<Candidato, Integer> num_voti;
 
@@ -43,19 +48,28 @@ public class Seggio {
                                       789,987));
         set_studenti.add(new Studente("Paola",
                                       "Penna",
-                                      890,098));
+                                      890,98));
         
+    }
+
+    private void updateListCandidati() {
+        if (list_candidati != null) {
+            if (list_candidati.size() == set_candidati.size()) {
+                return;
+            }
+        }
+        list_candidati = Arrays.asList(
+                            set_candidati.toArray(new Candidato[0]));
+        Candidato c;
+        Collections.sort(list_candidati);
     }
 
     public void printListaCandidati() {
         System.out.println("Lista candidati:");
-        List<Candidato> lista = Arrays.asList(
-                                    set_candidati.toArray(new Candidato[0]));
+        updateListCandidati();
         Candidato c;
-        Collections.sort(lista);
-        
-        for (int i = 0; i < lista.size(); i++) {
-            c = lista.get(i);
+        for (int i = 0; i < list_candidati.size(); i++) {
+            c = list_candidati.get(i);
             System.out.println((i + 1) + ") " + c.getNome() + " " + 
                                c.getCognome() + " - " + c.getLista()); 
         }
@@ -73,7 +87,7 @@ public class Seggio {
                 if (candidato.getLista().equals(str)) {
                     System.out.println(candidato.getNome() + " " +
                                        candidato.getCognome() + ": " +
-                                       num_voti.get(candidato));
+                                       num_voti.get(candidato) + " voto/i");
                 }
             }
         }
@@ -85,19 +99,22 @@ public class Seggio {
 
     public static void main(String args[]) {
         
-        Scanenr scanner  = new Scanner(System.in);
+        Scanner scanner  = new Scanner(System.in);
         Seggio  seggio   = new Seggio();
+        Candidato cand   = null;
         boolean exit     = false;
+        boolean flag     = false;
+        boolean flag_2   = false;
+        boolean flag_3   = false;
         long matricola   = 0;
         long codice_ctr  = 0;
         int  input       = 0;
 
 
         do {
-            if (has_voted.size() >= set_studenti.size() + 
-                    set_candidati.size()) {
+            if (seggio.has_voted.size() >= seggio.set_studenti.size() + 
+                    seggio.set_candidati.size()) {
                 System.out.println("-- Ogni studente ha votato --");
-                seggio.printResults();
                 break;
             }
 
@@ -117,18 +134,87 @@ public class Seggio {
             
             switch (input) {
                 case 1:
-                    try {                    
+                    try {            
+                        flag   = false;    
+                        flag_2 = false;    
+                        flag_3 = false;
                         System.out.print("Inserire matricola: ");
                         matricola = Long.parseLong(scanner.nextLine());
                         System.out.print("Inserire codice di controllo: ");
                         codice_ctr = Long.parseLong(scanner.nextLine());
-                        for (Candidato c : set_candidati) {
+                        for (Candidato c : seggio.set_candidati) {
                             if (c.getMatricola() != matricola || 
                                     c.getCodiceControllo() != codice_ctr) {
                                 continue;
                             }
+                            if (seggio.has_voted.get(c) != null) {
+                                flag_3 = true;
+                                break;
+                            }
+                            flag = true;
                             seggio.printListaCandidati();
-
+                            System.out.print("Votare candidato di indice" + 
+                                             "(inserire 0 per scheda " + 
+                                             "bianca): ");
+                            input = Integer.parseInt(scanner.nextLine());
+                            seggio.has_voted.put(c, true);
+                            seggio.updateListCandidati();
+                            if (input >= 0 && input <= 
+                                    seggio.set_candidati.size()) {
+                                if (input != 0) {
+                                    c = seggio.list_candidati.get(input - 1);
+                                    if (seggio.num_voti.get(c) != null) {
+                                        seggio.num_voti.put(c, 
+                                                seggio.num_voti.get(c) + 1);
+                                        break;
+                                    }
+                                    seggio.num_voti.put(c, 1);
+                                }
+                                break;
+                            }
+                        }
+                        if (!flag) {
+                            for (Studente s : seggio.set_studenti) {
+                                if (s.getMatricola() != matricola || 
+                                        s.getCodiceControllo() != codice_ctr) {
+                                    continue;
+                                }
+                                if (seggio.has_voted.get(s) != null) {
+                                    flag_3 = true;
+                                    break;
+                                }
+                                flag_2 = true;
+                                seggio.printListaCandidati();
+                                System.out.print("Votare candidato di indice" + 
+                                                 "(inserire 0 per scheda " + 
+                                                 "bianca): ");
+                                input = Integer.parseInt(scanner.nextLine());
+                                seggio.has_voted.put(s, true);
+                                seggio.updateListCandidati();
+                                if (input >= 0 && input <= 
+                                        seggio.set_candidati.size()) {
+                                    if (input != 0) {
+                                        cand = seggio.list_candidati.get(input 
+                                                                         - 1);
+                                        if (seggio.num_voti.get(cand) != null) {
+                                            seggio.num_voti.put(cand, 
+                                                seggio.num_voti.get(cand) + 1);
+                                            break;
+                                        }
+                                        seggio.num_voti.put(cand, 1);
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                        if (flag_3) {
+                            System.out.println("Questo studente ha gia' " +
+                                               "votato.");
+                            continue;
+                        }
+                        if (flag_2 == false && flag == false) {
+                            System.out.println("Matricola o codice di " +
+                                               "accesso errato.");
                         }
                     } catch (NumberFormatException e) {
                         System.out.println("-- Errore in input --");
@@ -140,7 +226,7 @@ public class Seggio {
                 break;
 
                 case 2:
-                    
+                    seggio.printResults();
                 break;
 
                 case 3:
