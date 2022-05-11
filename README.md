@@ -1,5 +1,5 @@
 # programmazione_19
-Repository dove vi si trovano tutti gli esercizi svolti lasciati dal professore La Cascia.
+Repository dove vi si trovano tutti gli esercizi svolti lasciati durante il corso di Java ad ingegneria informatica.
 
 ### Compilare ed eseguire:
 - Aprire un terminale
