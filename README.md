@@ -2,7 +2,7 @@
 
 --------
 
-Here you will find all the exercises I did for the Java course of my Bachelor.
+Here you will find all the exercises I did for the Java course during my bachelor in Computer Engineering.
 
 --------
 
