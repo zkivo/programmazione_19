@@ -2,11 +2,7 @@
 
 --------
 
-Here you will find all the exercises i did for the Java class during my bachelor.
-
-Each exercise is inside a folder es[0-11] where you can find one or more projects. Inside the last directory (es11) you will find 6 projects which are the larger programs i wrote for this class.
-
-All the documentation is in Italian since it was the language of the class. In fact, this is the only part i am writing in english for curious visitors, the rest is left as it was. Thank you.
+Here you will find all the exercises I did for the Java course of my Bachelor.
 
 --------
 
